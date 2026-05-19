@@ -65,7 +65,7 @@ export default function ProductsPage() {
           <h1 className="text-2xl font-bold tracking-tight">Artikel</h1>
           <p className="text-sm text-muted-foreground">{filteredProducts.length} Artikel{hasFilters && " (gefiltert)"}</p>
         </div>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex max-w-full gap-2 overflow-x-auto">
           <Button variant="outline" size="sm"><Upload className="mr-1.5 h-3.5 w-3.5" />Import</Button>
           <Button variant="outline" size="sm"><Download className="mr-1.5 h-3.5 w-3.5" />Export</Button>
           <Button variant="outline" size="sm"><QrCode className="mr-1.5 h-3.5 w-3.5" />QR-Codes</Button>
@@ -122,7 +122,7 @@ export default function ProductsPage() {
                   <TableRow key={product.id} className="group">
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center">A</div>
+                        <div className="h-8 w-8 rounded-xl bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04] flex items-center justify-center">A</div>
                         <div>
                           <p className="font-medium text-sm">{product.name}</p>
                           {product.lastMovementAt && <p className="text-xs text-muted-foreground">Letzte Bewegung: {formatDate(product.lastMovementAt)}</p>}
@@ -145,7 +145,7 @@ export default function ProductsPage() {
             </TableBody>
           </Table>
         </CardContent>
-        <div className="border-t px-4 py-3">
+        <div className="px-4 py-3 shadow-[0_-1px_0_rgba(15,23,42,0.05)]">
           <Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filteredProducts.length} pageSize={pageSize} onPageChange={setCurrentPage} />
         </div>
       </Card>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
@@ -41,13 +42,13 @@ export default function PurchaseOrdersPage() {
                   <TableCell className="text-sm text-muted-foreground">{order.projectName || "-"}</TableCell>
                   <TableCell><StatusBadge status={order.status} /></TableCell>
                   <TableCell className="text-sm text-muted-foreground">{order.positions.length}</TableCell>
-                  <TableCell><div className="flex gap-1 opacity-0 group-hover:opacity-100"><Button size="icon" variant="ghost" className="h-7 w-7"><ArrowUpRight className="h-3.5 w-3.5" /></Button></div></TableCell>
+                  <TableCell><div className="flex gap-1 opacity-0 group-hover:opacity-100"><Link href={`/inventory/purchase-orders/${order.id}`}><Button size="icon" variant="ghost" className="h-7 w-7"><ArrowUpRight className="h-3.5 w-3.5" /></Button></Link></div></TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </CardContent>
-        <div className="border-t px-4 py-3"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
+        <div className="px-4 py-3 shadow-[0_-1px_0_rgba(15,23,42,0.05)]"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
       </Card>
     </div>
   );

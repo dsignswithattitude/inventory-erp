@@ -36,7 +36,7 @@ export default function SettingsPage() {
         <CardContent>
           <div className="space-y-3">
             {[{ label: "Kritische Bestandswarnungen", desc: "E-Mail bei kritischen Artikeln", enabled: true }, { label: "Bestellung überfällig", desc: "E-Mail bei überfälligen Lieferungen", enabled: true }, { label: "Fahrzeug unvollständig", desc: "Push bei fehlenden Artikeln", enabled: false }, { label: "Prüfmittel fällig", desc: "E-Mail 7 Tage vor Fälligkeit", enabled: true }].map((item, i) => (
-              <div key={i} className="flex items-center justify-between rounded-lg border p-3">
+              <div key={i} className="flex items-center justify-between rounded-2xl bg-white p-3 shadow-[0_12px_30px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04]">
                 <div><p className="text-sm font-medium">{item.label}</p><p className="text-xs text-muted-foreground">{item.desc}</p></div>
                 <input type="checkbox" defaultChecked={item.enabled} className="h-4 w-4 rounded border-gray-300" />
               </div>
@@ -50,9 +50,9 @@ export default function SettingsPage() {
         <CardContent>
           <div className="space-y-2">
             {[{ name: "Klaus Müller", role: "Admin", email: "k.mueller@example.com" }, { name: "Thomas Becker", role: "Monteur", email: "t.becker@example.com" }, { name: "Anna Fischer", role: "Lagerist", email: "a.fischer@example.com" }].map((user, i) => (
-              <div key={i} className="flex items-center justify-between rounded-lg border p-3">
+              <div key={i} className="flex items-center justify-between rounded-2xl bg-white p-3 shadow-[0_12px_30px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04]">
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-slate-200 flex items-center justify-center text-sm font-medium">{user.name.split(" ").map(n => n[0]).join("")}</div>
+                  <div className="h-9 w-9 rounded-full bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04] flex items-center justify-center text-sm font-medium">{user.name.split(" ").map(n => n[0]).join("")}</div>
                   <div><p className="text-sm font-medium">{user.name}</p><p className="text-xs text-muted-foreground">{user.email}</p></div>
                 </div>
                 <div className="flex items-center gap-3"><span className="text-xs font-medium text-muted-foreground">{user.role}</span><Button variant="ghost" size="sm">Bearbeiten</Button></div>

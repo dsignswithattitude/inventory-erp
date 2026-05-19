@@ -43,7 +43,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
             <div className="mt-2"><StatusBadge status={vehicle.status} /></div>
           </div>
         </div>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex max-w-full gap-2 overflow-x-auto">
           <Button variant="outline" size="sm"><QrCode className="mr-1.5 h-3.5 w-3.5" />QR-Code</Button>
           <Button variant="outline" size="sm"><Printer className="mr-1.5 h-3.5 w-3.5" />Auffüllliste drucken</Button>
           <Button variant="outline" size="sm"><CheckCircle className="mr-1.5 h-3.5 w-3.5" />Inventur</Button>

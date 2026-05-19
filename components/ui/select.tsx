@@ -15,7 +15,7 @@ export function Select({ options, value, onChange, placeholder, className }: Sel
     <select
       value={value}
       onChange={onChange}
-      className={cn("h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className)}
+      className={cn("h-10 w-full rounded-xl bg-white px-3 py-1 text-sm shadow-[0_10px_24px_rgba(15,23,42,0.05)] ring-1 ring-black/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/25 disabled:cursor-not-allowed disabled:opacity-50", className)}
     >
       {placeholder && <option value="">{placeholder}</option>}
       {options.map((opt) => (

@@ -18,7 +18,7 @@ export function Pagination({ currentPage, totalPages, totalItems, pageSize, onPa
       <p className="text-xs text-muted-foreground">
         {totalItems === 0 ? "Keine Einträge" : `${start}–${end} von ${totalItems}`}
       </p>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1.5" data-native-action="true">
         <Button size="sm" variant="outline" disabled={currentPage <= 1} onClick={() => onPageChange(currentPage - 1)}>
           <ChevronLeft className="h-3.5 w-3.5" />
         </Button>

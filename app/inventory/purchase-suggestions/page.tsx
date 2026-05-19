@@ -68,7 +68,7 @@ export default function PurchaseSuggestionsPage() {
             </TableBody>
           </Table>
         </CardContent>
-        <div className="border-t px-4 py-3"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
+        <div className="px-4 py-3 shadow-[0_-1px_0_rgba(15,23,42,0.05)]"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
       </Card>
     </div>
   );

@@ -43,7 +43,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="mt-2"><StatusBadge status={product.status} /></div>
           </div>
         </div>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex max-w-full gap-2 overflow-x-auto">
           <Button variant="outline" size="sm"><QrCode className="mr-1.5 h-3.5 w-3.5" />QR-Code</Button>
           <Button variant="outline" size="sm"><ShoppingCart className="mr-1.5 h-3.5 w-3.5" />Bestellvorschlag</Button>
           <Button variant="outline" size="sm"><ArrowRightLeft className="mr-1.5 h-3.5 w-3.5" />Umbuchen</Button>
@@ -151,7 +151,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <CardHeader><CardTitle className="text-base">Lieferanten</CardTitle></CardHeader>
             <CardContent>
               {product.supplierName ? (
-                <div className="flex items-center justify-between rounded-lg border p-4">
+                <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-[0_12px_30px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04]">
                   <div>
                     <p className="font-medium">{product.supplierName}</p>
                     <p className="text-sm text-muted-foreground mt-1">Hauptlieferant</p>

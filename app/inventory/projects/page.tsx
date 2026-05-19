@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                 <TableRow><TableCell colSpan={10} className="p-0"><EmptyState title="Keine Projekte gefunden" description="Passen Sie Ihre Suche an." /></TableCell></TableRow>
               ) : paginated.map((prj) => (
                 <TableRow key={prj.id} className="group">
-                  <TableCell><div className="flex items-center gap-3"><div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center">P</div><span className="font-medium text-sm">{prj.name}</span></div></TableCell>
+                  <TableCell><div className="flex items-center gap-3"><div className="h-8 w-8 rounded-xl bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04] flex items-center justify-center">P</div><span className="font-medium text-sm">{prj.name}</span></div></TableCell>
                   <TableCell className="text-sm text-muted-foreground">{prj.customer || "-"}</TableCell>
                   <TableCell className="text-sm text-muted-foreground">{prj.startDate ? formatDate(prj.startDate) : "-"}</TableCell>
                   <TableCell><StatusBadge status={prj.status} /></TableCell>
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
             </TableBody>
           </Table>
         </CardContent>
-        <div className="border-t px-4 py-3"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
+        <div className="px-4 py-3 shadow-[0_-1px_0_rgba(15,23,42,0.05)]"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
       </Card>
     </div>
   );

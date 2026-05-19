@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -39,7 +40,7 @@ export default function LocationsPage() {
                 const Icon = typeIcons[loc.type] || Warehouse;
                 return (
                   <TableRow key={loc.id} className="group">
-                    <TableCell><div className="flex items-center gap-3"><div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center"><Icon className="h-4 w-4 text-slate-600" /></div><span className="font-medium text-sm">{loc.name}</span></div></TableCell>
+                    <TableCell><div className="flex items-center gap-3"><div className="h-8 w-8 rounded-xl bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04] flex items-center justify-center"><Icon className="h-4 w-4 text-slate-600" /></div><span className="font-medium text-sm">{loc.name}</span></div></TableCell>
                     <TableCell className="text-sm text-muted-foreground capitalize">{loc.type}</TableCell>
                     <TableCell className="text-sm">{loc.responsiblePerson || "-"}</TableCell>
                     <TableCell className="text-right text-sm">{loc.itemCount}</TableCell>
@@ -47,14 +48,14 @@ export default function LocationsPage() {
                     <TableCell className="text-right">{loc.criticalItems > 0 ? <span className="font-semibold text-sm text-red-600">{loc.criticalItems}</span> : <span className="text-sm text-muted-foreground">-</span>}</TableCell>
                     <TableCell><StatusBadge status={loc.status} /></TableCell>
                     <TableCell className="text-sm text-muted-foreground">{loc.lastMovementAt ? formatDate(loc.lastMovementAt) : "-"}</TableCell>
-                    <TableCell><div className="flex gap-1 opacity-0 group-hover:opacity-100"><Button size="icon" variant="ghost" className="h-7 w-7"><ArrowUpRight className="h-3.5 w-3.5" /></Button></div></TableCell>
+                    <TableCell><div className="flex gap-1 opacity-0 group-hover:opacity-100"><Link href={`/inventory/locations/${loc.id}`}><Button size="icon" variant="ghost" className="h-7 w-7"><ArrowUpRight className="h-3.5 w-3.5" /></Button></Link></div></TableCell>
                   </TableRow>
                 );
               })}
             </TableBody>
           </Table>
         </CardContent>
-        <div className="border-t px-4 py-3"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
+        <div className="px-4 py-3 shadow-[0_-1px_0_rgba(15,23,42,0.05)]"><Pagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} pageSize={pageSize} onPageChange={setCurrentPage} /></div>
       </Card>
     </div>
   );

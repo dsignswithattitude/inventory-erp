@@ -15,14 +15,14 @@ export function MetricCard({ label, value, status, href, icon: Icon }: MetricCar
   const isCritical = status === "critical";
   return (
     <Link href={href || "#"}>
-      <Card className="hover:shadow-md transition-shadow cursor-pointer">
-        <CardContent className="p-4">
+      <Card className="cursor-pointer shadow-[0_14px_35px_rgba(15,23,42,0.06)] transition-colors hover:bg-blue-50/40">
+        <CardContent className="p-3.5">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{label}</p>
-            {isCritical && <AlertTriangle className="h-4 w-4 text-red-500" />}
+            <p className="text-[11px] font-medium text-muted-foreground">{label}</p>
+            {isCritical && <AlertTriangle className="h-3.5 w-3.5 text-red-500" />}
           </div>
-          <p className={`mt-1 text-2xl font-bold ${isCritical ? "text-red-600" : ""}`}>{value}</p>
-          {href && <div className="mt-2 flex items-center gap-0.5 text-xs text-muted-foreground hover:text-foreground"><ArrowRight className="h-3 w-3" />Ansehen</div>}
+          <p className={`mt-1 text-xl font-semibold ${isCritical ? "text-red-600" : ""}`}>{value}</p>
+          {href && <div className="mt-1.5 flex items-center gap-0.5 text-[11px] text-muted-foreground hover:text-foreground"><ArrowRight className="h-3 w-3" />Ansehen</div>}
         </CardContent>
       </Card>
     </Link>

@@ -1,50 +1,50 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(222 47% 11%);
+  --color-background: hsl(210 12% 94%);
+  --color-foreground: hsl(220 18% 9%);
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(222 47% 11%);
+  --color-card-foreground: hsl(220 18% 9%);
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(222 47% 11%);
-  --color-primary: hsl(221 83% 53%);
-  --color-primary-foreground: hsl(210 40% 98%);
-  --color-secondary: hsl(210 40% 96%);
-  --color-secondary-foreground: hsl(222 47% 11%);
-  --color-muted: hsl(210 40% 96%);
-  --color-muted-foreground: hsl(215 16% 47%);
-  --color-accent: hsl(210 40% 96%);
-  --color-accent-foreground: hsl(222 47% 11%);
+  --color-popover-foreground: hsl(220 18% 9%);
+  --color-primary: hsl(217 91% 56%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(214 18% 95%);
+  --color-secondary-foreground: hsl(220 18% 9%);
+  --color-muted: hsl(214 18% 95%);
+  --color-muted-foreground: hsl(220 8% 44%);
+  --color-accent: hsl(214 18% 95%);
+  --color-accent-foreground: hsl(220 18% 9%);
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(210 40% 98%);
-  --color-border: hsl(214 32% 91%);
-  --color-input: hsl(214 32% 91%);
-  --color-ring: hsl(221 83% 53%);
+  --color-border: hsl(220 14% 88%);
+  --color-input: hsl(220 14% 88%);
+  --color-ring: hsl(217 91% 56%);
   --radius-lg: 0.5rem;
   --radius-md: 0.5rem;
   --radius-sm: 0.5rem;
 }
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --background: 210 12% 94%;
+  --foreground: 220 18% 9%;
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 220 18% 9%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --primary: 221 83% 53%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222 47% 11%;
+  --popover-foreground: 220 18% 9%;
+  --primary: 217 91% 56%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 18% 95%;
+  --secondary-foreground: 220 18% 9%;
+  --muted: 214 18% 95%;
+  --muted-foreground: 220 8% 44%;
+  --accent: 214 18% 95%;
+  --accent-foreground: 220 18% 9%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 221 83% 53%;
+  --border: 220 14% 88%;
+  --input: 220 14% 88%;
+  --ring: 217 91% 56%;
   --radius: 0.5rem;
 }
 
@@ -55,6 +55,105 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: "Geist", "Suisse Intl", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-width: 360px;
+  overflow-x: hidden;
+}
+
+.inventory-main > .space-y-6 {
+  width: 100%;
+  max-width: 1120px;
+  min-width: 0;
+  margin-inline: 0 auto;
+}
+
+.inventory-main > .space-y-6 > :first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 16px 18px;
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.82),
+    0 0 0 1px rgba(15, 23, 42, 0.035);
+  backdrop-filter: blur(16px);
+}
+
+.inventory-main > .space-y-6 > :first-child > :first-child {
+  min-width: 0;
+}
+
+.inventory-main > .space-y-6 > :first-child > :last-child {
+  flex-shrink: 0;
+}
+
+.inventory-main h1 {
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: 0;
+  color: rgb(15 23 42);
+}
+
+.inventory-main h1 + p,
+.inventory-main label {
+  color: rgb(100 116 139);
+}
+
+.inventory-main label {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.inventory-main [class*="grid-cols"] > .rounded-xl.bg-white,
+.inventory-main [class*="grid-cols"] > .rounded-2xl.bg-white {
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+.inventory-main table {
+  background: white;
+  table-layout: auto;
+  min-width: max-content;
+}
+
+.inventory-main [class*="overflow-auto"] {
+  overscroll-behavior-inline: contain;
+}
+
+.inventory-main .grid {
+  min-width: 0;
+}
+
+.inventory-main .grid > *,
+.inventory-main .flex > * {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .inventory-main > .space-y-6 > :first-child {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .inventory-main > .space-y-6 > :first-child > :last-child {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inventory-main {
+    width: calc(100vw - 244px);
+    max-width: calc(100vw - 244px);
+  }
 }

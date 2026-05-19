@@ -17,8 +17,8 @@ interface RiskCardProps {
 export function RiskCard({ risk }: RiskCardProps) {
   const isCritical = risk.severity === "critical";
   return (
-    <Card className={`${isCritical ? "border-red-200 bg-red-50/50" : "border-amber-200 bg-amber-50/50"}`}>
-      <CardContent className="p-4">
+    <Card className={`${isCritical ? "bg-red-50/80 shadow-[0_14px_35px_rgba(239,68,68,0.08)]" : "bg-amber-50/80 shadow-[0_14px_35px_rgba(245,158,11,0.08)]"}`}>
+      <CardContent className="p-3.5">
         <div className="flex items-start justify-between">
           <div className="flex items-start gap-2">
             <div className={`rounded-full p-1 ${isCritical ? "bg-red-100 text-red-600" : "bg-amber-100 text-amber-600"}`}>
